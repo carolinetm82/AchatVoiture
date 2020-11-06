@@ -16,9 +16,12 @@ df = pd.read_csv('carData.csv')
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-
+# 
 app.layout = html.Div([
+    html.H1('Comment acheter sa voiture', style={'textAlign': 'center'}),
+
     dcc.Graph(id='graph-with-slider'),
+
     dcc.Slider(
         id='year-slider',
         min=df['Year'].min(),
